@@ -1,0 +1,9 @@
+% feynman-rules.t4 -- generated from feynman-rules.mp
+\fmfL(7.64674,3.68266,lt){$k_1$}%
+\fmfL(13.44897,4.55925,lb){$\nwarrow k_2$}%
+\fmfL(4.35338,13.68266,rt){$k_1+k_2-k_3$}%
+\fmfL(14.5509,14.55925,rb){$k_3\nearrow $}%
+\fmfL(0.68279,-1.64667,rt){$\alpha $}%
+\fmfL(0.68279,21.64667,rb){$\beta $}%
+\fmfL(19.31721,-1.64667,lt){$\mu $}%
+\fmfL(19.31721,21.64667,lb){$\nu $}%

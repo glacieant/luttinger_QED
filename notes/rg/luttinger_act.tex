@@ -1,0 +1,1399 @@
+\documentclass[notitlepage,onecolumn,showpacs,aps,prb]{revtex4-2}
+\usepackage{geometry}
+\usepackage[bottom]{footmisc}
+\usepackage{color}
+%\usepackage{doi}
+\usepackage{hyperref}
+%\hypersetup{hidelinks=true,}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+%\usepackage[nointegrals]{wasysym}
+\usepackage{graphicx}
+\usepackage{amsmath}
+%\usepackage[breakable]{tcolorbox}
+%\usepackage{esint}
+\usepackage{epstopdf}
+%\usepackage{color}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tensor}
+\usepackage{slashed}
+\usepackage{cancel}
+%\usepackage{sidecap}
+%\sidecaptionvpos{figure}{t}
+\allowdisplaybreaks
+
+
+\usepackage{feynmp-auto}
+\setlength{\unitlength}{1mm}
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+\newcommand{\bsym}[1]{\boldsymbol{#1}}
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\op}[1]{\hat{#1}}
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\Tr}{\text{Tr}}
+\newcommand{\tr}{\text{tr}}
+\newcommand{\N}{\mathcal{N}}
+\renewcommand{\k}{\mathbf{k}}
+\newcommand{\q}{\mathbf{q}}
+\renewcommand{\r}{\mathbf{r}}
+\renewcommand{\d}{\mathfrak{D}}
+\newcommand{\F}{\mathcal{F}}
+\renewcommand{\L}{\mathcal{L}}
+%\newcommand{\beq}{\begin{equation}\begin{aligned}}
+%\newcommand{\eeq}{\end{aligned}\end{equation}}
+
+%\newcommand{\beq}{\begin{align}}
+%\newcommand{\eeq}{\end{align}}
+
+\def\beq#1\eeq{\begin{align}#1\end{align}}
+
+\newcommand{\todo}[1]{{\color{red} {\bf [ToDo: #1]}}}
+\newcommand{\mv}[1]{{\color{green}{#1}}}
+
+\DeclareMathOperator*{\sumint}{%
+\mathchoice%
+  {\ooalign{$\displaystyle\sum$\cr\hidewidth$\displaystyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.14\height}{\scalebox{.7}{$\textstyle\sum$}}\cr\hidewidth$\textstyle\int$\hidewidth\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+  {\ooalign{\raisebox{.2\height}{\scalebox{.6}{$\scriptstyle\sum$}}\cr$\scriptstyle\int$\cr}}
+}
+
+\graphicspath{{./}{./figs/}}
+
+
+%\begin{figure}
+%  \includegraphics[width=0.8\columnwidth]{filename}
+%   \caption{fig caption}
+%   \label{labelname}
+%\end{figure}
+  
+\begin{document}
+
+\title{Renormalization of 3D Luttinger action}
+\author{Santanu Dey}
+\date{\today}
+\begin{abstract}
+Three-dimensional Luttinger fermions have quadratic band touching dispersion with
+Lifshitz-like dynamical scaling $z = 2$. We extend the single-particle Luttinger
+Hamiltonian to include the effects of minimally coupled gauge fluctuations and
+illustrate the long-wavelength behavior of the combined interacting system. Within
+the parameter space of our model, we discover an analog of the non-Fermi liquid phase
+found in Luttinger semimetals with static Coulomb interaction~\cite{moon13}. We further
+show that dynamical gauge fluctuations can also lead to non-relativistic Lifshitz
+scaling for the emergent photons in our theory. With an RG analysis, we describe the
+stability and scaling properties of its fixed points in the presence of additional
+cubic-symmetry allowed perturbations.
+\end{abstract}
+
+\maketitle
+
+\section{The action and its conserved currents}
+
+\subsection{The fermion sector}
+
+Let us consider an U(1) gauge theory coupled to fermions with 
+symmetry protected quadratic band touching. The action without the gauge fields 
+has been discussed before \cite{murakami04,moon13}. In the rotation and particle-hole
+symmetric limit, using $N_\Gamma=(d-1)(d/2+1)$ Clifford matrices $\{\Gamma^a\}$ 
+of dimensions $4\times 4$, the Euclidean Lagrangian is expressed as
+\cite{janssen15,boettcher16}:
+\beq
+&\L_{\rm L} = \psi^\dagger\left[\partial_0
++\frac{d_a(-i\partial)}{2m}\Gamma^a\right]\psi,\nonumber\\
+&d_a\left(-i\partial\right) = -\sqrt{\frac{d}{2(d-1)}}
+\Lambda_{a}^{ij}\partial_i\partial_j, \ 
+\{\Gamma^a,\Gamma^b\} =2\delta_{ab},
+\label{matter}
+\eeq
+where $\{\Lambda_a\}$ are the $(d-1)(d+2)/2$ real, symmetric 
+$d\times d$ Gell-Mann matrices \cite{boettcher16,janssen15}. In three 
+dimensional momentum space the band dispersions are 
+\cite{boettcher16},
+\beq
+&d_1(k)=\frac{3}{2}\left(k_x^2-k_y^2\right), \
+d_2(k)=\sqrt{3}k_x k_y,\nonumber\\
+&d_3(k)=\sqrt{3}k_xk_z, \
+d_4(k)=\sqrt 3 k_y k_z, \nonumber\\
+&d_5(k)=\frac{1}{2}\left(2k_z^2-k_x^2-k_y^2\right)
+\eeq
+In our notation the greek indices span the 
+space-time and the roman indices only span the space.
+It can be shown that $\Gamma^{ab}=\frac{1}{2}[\Gamma^a,\Gamma^b]$ are the 
+$N_\Gamma(N_\Gamma-1)/2$ generators 
+of $SO(N_\Gamma)$ rotations \cite{zinn21}. Certain useful identities of the $\Gamma$ 
+matrices are as follows:
+\beq
+\Gamma^b\Gamma^a\Gamma^b&=(2-N_\Gamma)\Gamma^a\nonumber\\
+\Gamma^c\Gamma^a\Gamma^b\Gamma^c&=(N_\Gamma-4)\Gamma^a\Gamma^b+4\delta_{ab}\nonumber\\
+\Gamma^d\Gamma^a\Gamma^b\Gamma^c\Gamma^d&=-2\Gamma^c\Gamma^b\Gamma^a-(N_\Gamma-4)\Gamma^a\Gamma^b\Gamma^c
+\eeq
+The symmetric Gell-mann matrices obey the identities \cite{murakami04,boettcher16,janssen15},
+\beq
+&\Lambda^{ij}_a\Lambda^{kl}_a
+=\left(\delta_{ik}\delta_{jl}+\delta_{il}\delta_{jk}\right)
+-\frac{2}{d}\delta_{ij}\delta_{kl},\nonumber\\
+&\tr\left[\Lambda_a\Lambda_b\right]=2\delta_{ab},
+\eeq
+Using these identities it can be shown in a simple way 
+that \cite{boettcher16}
+\beq
+&d_a(p)d_a(q)=\frac{d}{d-1}\left(\left(\vec p_\perp\cdot\vec q_\perp\right)^2-
+\frac{1}{d}
+p_\perp^2q_\perp^2\right),\nonumber\\
+\implies&
+d_a(q)d_a(q)=q_\perp^4.
+\eeq
+
+The global U(1) symmetry of the action \eqref{matter} is manifest with the global transformations 
+$\psi\mapsto e^{ie\alpha}\psi$. The corresponding global currents are given by,
+\beq
+j_0&=ie\psi^\dagger\psi,\nonumber\\
+j_i&=ie\sqrt{\frac{d}{2(d-1)}}\frac{\Lambda_a^{ij}}{2m}
+\left[
+  \psi^\dagger\Gamma^a\partial_j\psi
+  -
+  \partial_j\psi^\dagger\Gamma^a\psi
+\right],
+\label{global_current}
+\eeq
+with the current conservation condition,
+\beq
+\partial_\mu j_\mu=0,
+\eeq
+dictated by the symmetry.
+We seek to elevate the global U(1) symmetry of the model to a local U(1) gauge symmetry
+by introducing vector gauge fields $A_\mu$ which are minimally coupled with the action.
+The inclusion of the minimal coupling is achieved by replacing 
+all the normal derivatives of the action with covariant derivatives
+$D_\mu=\partial_\mu+ieA_\mu$. With the covariant derivatives, the action reads as:
+\beq
+\L'_{\rm L} &= \psi^\dagger\left[\partial_0+ieA_0
+-\sqrt{\frac{d}{2(d-1)}}\Lambda_a^{ij}\Gamma^a\frac{D_i D_j}{2m}\right]\psi,\nonumber\\
+\label{cov_matter}
+\eeq
+with the rule that under the local U(1) transformations both the fermionic fields and
+the vector gauge fields transform simultaneously with the formula,
+\beq
+ {\rm U(1)}&:\psi\mapsto e^{ie\varphi(x)}\psi,\nonumber\\
+{\rm U(1)}&:A_\mu(x)\mapsto A_\mu(x) -\partial_\mu\varphi(x),\\
+\label{gauge}
+\eeq
+where $x=(\tau,\vec x)$ denotes the space-time coordinate. Similarly for the frequency-momentum
+space we shall use the notation $k=(k_0,\vec k)$. 
+It is straightforward to check that under the gauge transformations [Eq.~\eqref{gauge}]
+the action of the covariant derivative changes as,
+\beq
+{\rm U(1)}&:D_\mu\psi\mapsto (\partial_\mu+i e A_\mu(x)-ie\partial_\mu\varphi(x))
+e^{ie\varphi(x)}\psi
+=e^{ie\varphi(x)}D_\mu\psi,
+\eeq
+which in turn ensures
+that the minimally coupled action written down above \eqref{cov_matter} 
+remains invariant under the gauge transformation.
+
+\subsection{The photon sector}
+
+With the fermionic sector well defined we need a gauge invariant description of the 
+gauge field action. We are interested in an U(1) gauge theory in (3+1) dimension. The gauge 
+invariant Euclidean Maxwell action is given by \cite{srednicki07,zinn21}
+\beq
+\L_{\rm Maxwell}=\frac{1}{4}F^2_{\mu\nu}+j^\mu A_\mu,
+\eeq
+with the matter current $j^\mu$ defined above \eqref{global_current}. 
+However, we are in a situation where the Lorentz invariance is absent in the fermionic sector, 
+and naturally, space and time has different engineering 
+dimensions. This scenario has been explored in the context of the pure 
+U(1) gauge theory of 
+pyrochlore compounds \cite{moessner03,hermele04}. From the fermion sector it is imperative 
+that before any loop correction the engineering dimension of space and time is 
+respectively $[x^{-1}]=1$ and $[\tau^{-1}]=z_0=2$. The appropriate 
+U(1) gauge theory in this situation 
+goes by the name of $z_0=2$ Lifshitz electrodynamics \cite{das10,alexandre13} and its 
+properties have been studied in details \cite{das10,alexandre13,anselmi10,farias12}. 
+The Lagrangian is most compactly written in Euclidean space-time as,
+\beq
+\L_{\rm U(1)} &= 
+\frac{1}{2}
+F_{0i}F_{0i}+
+\frac{1}{4}
+F_{ij}
+\left(u^2+v^2
+\left[-
+  \nabla^2\right]\right)
+F_{ij}
++ j_\mu A_\mu, \text{ with }
+F_{\mu\nu} = D_\mu A_\nu - D_\nu A_\mu.
+\label{gauge_act}
+\eeq
+As a consequence of gauge invariance, the photon propagator obtained from this action is singular.
+To determine the photon propagator we need
+to work on a fixed gauge. In a Lorentz invariant theory a gauge fixing function 
+$G(A)=\partial_\mu A_\mu$ can be set to zero because under a gauge transformation 
+$A_\mu(x)\mapsto A^\alpha_\mu(x)=A_\mu(x)+\partial_\mu\alpha(x)$ the function transforms as
+\beq
+G(A^\alpha_\mu(x))=\partial_\mu A_\mu(x)+\partial^2\alpha(x),
+\eeq
+and we can always choose and $\alpha(x)$ such that the function vanishes. The gauge fixing
+function can in principle be completely arbitrary. In the current
+case a suitable 
+gauge fixing function for the action is given by \cite{alexandre13} -
+\beq
+G(A_\mu,\omega)
+=
+\partial_0A_0(x)+L_g\partial_i A_i(x)-\omega(x)=0,
+\label{gauge_orbit}
+\eeq
+where $\omega(x)$ is an arbitrary function and we have
+defined a differential operator $L_g=u^2+v^2\left[-\nabla^2\right]$, 
+In the path integral
+we must only sum over the unique gauge configurations dictated by the 
+gauge orbit $\omega(x)$ \eqref{gauge_orbit}. Various different gauge field
+configurations which are related to each other through the 
+$\alpha(x)$ reparameterization must be counted once. The original functional 
+integral is given by
+\beq
+Z_{\rm U(1)}[j]=\int\mathcal D A e^{-\int_x \L_{\rm U(1)}(A_\mu,j_\mu)},
+\eeq
+where $\int_x=\int dx_0 d^dx_\perp$ is a short-hand notation for 
+the $d+1$ dimensional space-time integral.
+We wish to integrate over gauge field configurations which satisfy the 
+gauge fixing condition $G(A_\mu,\omega)=0$. We shall therefore
+sum over all gauge field reparameterization 
+$A_\mu(x)\mapsto A^\alpha_\mu(x)$ that leaves the functional integral invariant
+but also obey the gauge fixing condition. This can be carried out by the 
+Fadeev-Popov prescription where one uses the identity \cite{peskin95}, 
+\beq
+1=\int\mathcal D\alpha\det\left(\frac{\delta G(A_\mu^\alpha,\omega)}{\delta\alpha}
+\right)
+\delta\left(G(A_\mu^\alpha,\omega)\right),
+\eeq
+to modify the partition function of the gauge fields with a uniform unity weight,
+\beq
+Z_{\rm U(1)}[j]=\int\mathcal D\alpha\mathcal D A 
+e^{-\int_x \L_{\rm U(1)}(A_\mu,j_\mu)}
+\det\left(\frac{\delta G(A_\mu^\alpha,\omega)}{\delta\alpha}
+\right)
+\delta\left(G(A_\mu^\alpha,\omega)\right).
+\eeq
+With $\frac{\delta G(A_\mu^\alpha,\omega)}{\delta\alpha}
+=\partial_0^2+L_g\partial_i^2
+$ the determinant in this expression factors out. With the 
+intention to make the photon propagator more simple, a non-local gauge orbit can be 
+chosen for our Lorentz-violating gauge field action
+\cite{anselmi10,farias12,alexandre13} with a gauge fixing function,
+\beq
+G(A_\mu,\varphi)
+=\partial_0A_0(x)+L_g\partial_i A_i(x)
+-L_g^{1/2}\varphi(x),
+\eeq
+where we shall sum over all functions $\varphi(x)$ with a Gaussian weight centered around
+$\varphi(x)=0$. Finally, we make a gauge transformation 
+$A_\mu\mapsto A_\mu+\partial_\mu\alpha$ in the functional integral over the gauge fields 
+to obtain,
+\beq
+Z_{\rm U(1)}[j]
+=&\int\mathcal D\varphi e^{-
+\int_x\frac{\varphi(x)^2}{2\xi}}
+\int\mathcal D\alpha
+\det\left(\partial_0^2+L_g\partial_i^2\right)
+\nonumber\\
+&\times
+\int \mathcal D A^\alpha
+e^{-\int_x\mathcal L_{\rm U(1)}(A_\mu^\alpha,j_\mu)}
+\delta\left(\partial_0 A^\alpha_0(x)+
+L_g\partial_iA^\alpha_i(x)
+-L_g^{1/2}\varphi(x)
+\right)\nonumber\\
+=&
+\det\left(\partial_0^2+L_g\partial_i^2\right)
+\int\mathcal D\alpha
+\int \mathcal D A^\alpha
+e^{-\int_x\mathcal L_{\rm U(1)}(A^\alpha_\mu,j_\mu)}
+e^{-
+\int_x\frac{\left(
+L_g^{-1/2}
+\partial_0 A^\alpha_0(x)+
+L_g^{1/2}\partial_iA^\alpha_i(x)
+\right)^2}{2\xi}}.
+\eeq
+It is clear in the second line that $\alpha(x)$ has become a dummy parameter and naturally
+the functional integral
+over $\alpha(x)$ simply factors out. The procedure therefore achieves its
+goal of summing over unique gauge field configurations.
+The Feynman-'t Hooft gauge $\xi=1$ further simplifies the gauge fixed action,
+\beq
+\mathcal L_{\rm gf}
+&=\frac{1}{2}F_{0i}F_{0i}
++\frac{1}{4}F_{ij}L_gF_{ij}
++\frac{1}{2}\left(
+L_g^{-1/2}\partial_0A_0
++L_g^{1/2}\partial_i A_i
+\right)^2,
+\eeq
+and yields a simple non-singular gauge field propagator 
+to \cite{anselmi10},
+\beq
+D^{\rm gf}_{\mu\nu}(k)&=\langle A_\mu(-k)A_\nu(k)\rangle
+=\left(
+\delta_{\mu0}\delta_{\nu0}
+\frac{L_g(k_\perp^2)}{k_0^2+k_\perp^2L_g(k_\perp^2)}
++
+\delta_{\mu i}\delta_{\nu j}
+\frac{\delta_{ij}}{k_0^2+k_\perp^2L_g(k_\perp^2)}
+\right),
+\eeq
+where $k_\perp^2=k_i^2$ is the length of the momentum $\vec k_\perp$. 
+Henceforth, we shall use the gauge-fixed propagator 
+$D^{\rm gf}$ without referring to the gauge fixing directly.
+
+\section{RG analysis}
+
+\subsection{The action}
+
+The renormalization group analysis of the fully interacting problem 
+begins by separating the action in the free and the interacting 
+vertices part. For this analysis we must consider a gauge-invariant
+Lagrangian
+with symmetry allowed terms that are closed under renormalization.
+For this reason, in addition to the terms discussed so far we also
+include a Pauli coupling term,
+\beq
+\frac{\kappa}{2}\psi^\dagger \Gamma^{ab}\psi
+\eta^i_{ab}\epsilon_{ijk}
+F_{jk},
+\eeq
+with $\Gamma^{ab}=\frac{1}{2i}\left[\Gamma^a,\Gamma^b\right]$ and
+$\eta^i_{ab}=-\eta^i_{ba}$ are the symbols that relate Spin 3/2 SU(2) 
+matrices with $\Gamma_{ab}$ \cite{murakami04},
+\beq
+S^i&=\eta^i_{ab}\Gamma^{ab}, \nonumber  
+\left[\eta^i,\eta^j\right]=-\frac{1}{4}\epsilon^{ij}_{k}\eta^k.
+\eeq
+We shall need some more properties of $\eta^i$ matrices from their
+defining relation. For $D=4$ dimensional $\Gamma^{ab}$ matrices
+we have the formula $\tr\left[\Gamma^{ab}\Gamma^{cd}\right]
+=D\left(\delta_{ac}\delta_{bd}-\delta_{ad}\delta_{bc}\right)$, which
+we may use to find,
+\beq
+\tr\left[S^i S^j\right]
+&=-2D\eta^i_{ab}\eta^j_{ba},\nonumber\\
+\tr\left[\eta^i\eta^j\right]
+&=-\frac{5}{2D}\delta^{ij}
+=-\frac{5}{8}\delta^{ij}.
+\eeq
+It also follows that $\eta^i\eta^i=c I$, because this operator commutes with
+all the generators $\eta^i$. Using the trace identity we have,
+\beq
+\eta^i\eta^i=-\frac{15}{8N_\Gamma}I
+\eeq
+To relate $\eta^i_{ab}$ symbols with the $\Lambda_a^{ij}$
+matrices we need the formula \cite{boettcher17},
+\beq
+\Gamma^a=\frac{1}{\sqrt{2d(d-2)}}\{S^i,S^j\}\Lambda_a^{ij},
+\label{spin_formula}
+\eeq
+and use it in conjunction with
+the $\eta$ and $\Lambda$ matrices. We find,
+\beq
+\eta^i_{ab}&=
+\frac{1}{8}\Tr\left[S^i\Gamma^{ab}\right]
+,\nonumber\\
+&=\frac{1}{32d(d-2)i}
+\Lambda_a^{mn}\Lambda_b^{rs}
+\Tr\left[S^i\left[\{S^m,S^n\},\{S^r,S^s\}\right]\right]
+\eeq
+The $S^i$ commutators in the last line can be extracted by inverting 
+Eq.~\eqref{spin_formula} above.
+The Pauli coupling $\kappa$ is relevant in the infrared at $d=3$. 
+Together, we 
+have the action,
+\beq
+\mathcal L =& \mathcal L_{\rm gf} +\mathcal L_{\rm L} 
++ \mathcal L_{\rm int},\nonumber\\
+\mathcal L_{B,\rm g} =& 
+\frac{1}{2}F_{B,0i}F_{B,0i}
++\frac{1}{4}F_{B,ij}\left(u^2_B+v^2_B\left[-\nabla^2\right]\right)F_{B,ij}
+,\nonumber\\
+\mathcal L_{B,\rm L} =& \psi_B^\dagger\left[\partial_0
++\frac{\slashed d\left(-i\partial\right)}{2m_B}\right]\psi_B,\nonumber\\
+\mathcal L_{B,\rm int} =& 
+ie_B \Big[\psi_B^\dagger
+  A_{B,0}\psi_B
+  -
+  \sqrt{\frac{d}{2(d-1)}}
+  \frac{1}{2m_B}
+  \left(
+  \psi_B^\dagger\slashed\Lambda^{ij}A_{B,i}\partial_j\psi_B
+  -
+  \left(\partial_j\psi_B^\dagger\right)
+  \slashed\Lambda^{ij}A_{B,i}\psi_B
+  \right)
+  \Big]\nonumber\\
+&+\frac{e_B^2}{2m_B}
+\psi_B^\dagger
+\slashed d\left(A\right)
+\psi_B+
+\frac{\kappa_B}{2}\psi_B^\dagger \Gamma^{ab}\psi_B
+\eta^i_{ab}\epsilon_{ijk}
+\left(\partial_j A_{B,k}
+-\partial_k A_{B, j}
+\right),
+\eeq
+where $u^2_B>0, v^2_B>0$ for a positive definite (bounded) bosonic action,
+and we have introduced the Dirac slash notation, $P_a\Gamma^a=\slashed P$.
+The zero temperature Euclidean theory is embedded in (d+1) dimensions. 
+The tree level engineering dimension of space and time can be set at 
+$[x]=-1$ and $[\tau]=-z_0$. The engineering dimensions of the
+various fields and couplings of the theory are as follows,
+\beq
+&\left[\psi\right] = d/2, \ \left[m^{-1}\right] = z_0-2, 
+\ \left[A_0\right] = (d+z_0-2)/2, 
+\ \left[A_i\right] = (d-z_0)/2, \nonumber\\
+&\left[e^2\right] = 2+z_0-d,
+\ \left[u^2\right] = 2z_0-2,
+\ \left[v^2\right] = 2z_0-4,\nonumber\\
+&\left[\kappa\right] =  (3z_0-d-2)/2
+\eeq
+With $z_0=2$ all the couplings of the action are dimensionless 
+except from $e^2$ and $u$. 
+It is clear that the theory is 
+strongly coupled with the relevant coupling $u$ in any spatial dimensions
+with $z_0=2$. On the other hand the choice of $z_0 = 1$ turns the 
+fermion bands flat. To investigate whether the theory has Wilsoninan 
+fixed point within its parameter space we manually tune the relevant
+coupling to a critical value $u_c=0$ and study the effective theory 
+within a critical hypersurface parameterized by the remaining
+marginal couplings. 
+The critical gauge field action therefore becomes,
+\beq
+\mathcal L^c_{\rm g}
+=\frac{1}{2}F_{B,0i}F_{B,0i}+\frac{v^2_B}{4}F_{B,ij}
+\left[-\nabla^2\right]F_{B,ij}
+\eeq
+However, the gauge charge $e$ is also strongly relevant in
+the physical spatial dimension of interest $d=3$. 
+For perturbative control on the effective critical theory we follow Moon et al. 
+\cite{moon13} to work in $d=4-\epsilon$ 
+dimensions such that all the couplings of the theory are marginally relevant or 
+irrelevant except from $u$ which we critically tune to zero. 
+Along with 
+the compact temporal integral (Euclidean time-cycle) we are therefore undertaking 
+a $5-\epsilon$
+expansion of the theory.
+We start by renormalizing the bare fields and parameters as,
+\beq
+&\psi_B=\sqrt{Z_\psi}\psi, \ A_{B,\mu} = \sqrt{Z_A} A_\mu, \nonumber\\
+&m^{-1}_B= Z_{m^{-1}} m^{-1}, \ e_B\mapsto Z_e e, \
+v_B\mapsto Z_v v, \nonumber\\
+&\kappa_B=Z_\kappa\kappa
+\eeq
+The renormalized Lagrangian is therefore given by,
+\beq
+\mathcal L_{\rm crit} 
+=& \ \mathcal L^c_{\rm g} +\mathcal L_{\rm L} + \mathcal L_{\rm int},\nonumber\\
+\mathcal L^c_{\rm g} =& \ 
+\frac{Z_A}{2}F_{0i}F_{0i}+\frac{Z_A Z_v v^2}{4}F_{ij}
+\left[-\nabla^2\right]F_{ij},
+\nonumber\\
+\mathcal L_{\rm L} = & \ 
+Z_\psi\psi^\dagger\left[\partial_0
++Z_{m^{-1}}
+\frac{\slashed d\left(-i\partial\right)}{2m}\right]\psi,\nonumber\\
+\mathcal L_{\rm int} = & \ 
+Z_e Z_\psi \sqrt{Z_A} i e \psi^\dagger\Big[
+  A_0
+  -Z_{m^{-1}}
+  \sqrt{
+    \frac{d}{2(d-1)}}
+  \frac{\slashed\Lambda^{ij}
+  \left(\partial_iA_j
+  +A_j\partial_i
+  +A_i\partial_j
+  \right)}{2m}
+  \Big]\psi\nonumber\\
+&+Z_e^2Z_\psi Z_AZ_{m^{-1}} 
+\frac{e^2}{2m}
+\psi^\dagger
+\slashed d\left(A\right)\psi
++Z_\kappa Z_\psi\sqrt Z_A
+\frac{\kappa}{2}\psi^\dagger \Gamma^{ab}\psi
+\eta^i_{ab}\epsilon_{ijk}
+\left(\partial_j A_{k}
+-\partial_k A_{j}
+\right),
+\eeq
+Gauge invariance imposes further constraints on the renromalization parameters. 
+We have,
+\beq
+&Z_\psi=Z_e Z_\psi\sqrt{Z_A} 
+\text{ and } Z_\psi Z_{m^{-1}}=Z_e^2Z_\psi Z_AZ_{m^{-1}}
+,\nonumber\\
+\implies & Z_e\sqrt Z_A = 1.
+\eeq
+We redefine the remaining independent renormalization parameters as,
+\beq
+&Z_\psi=Z_1,\nonumber\\
+&Z_\psi Z_{m^{-1}}=Z_2,\nonumber\\
+&Z_A=Z_3,\nonumber\\
+&Z_AZ_v=Z_4,\nonumber\\
+&Z_\kappa Z_\psi\sqrt Z_A=Z_5.
+\eeq
+As a consequence it is possible to find the one-loop renormalization group coefficients
+of the theory by studying its two-point functions alone.
+Furthermore we shall expand around the tree level values of these renormalization 
+factors, $Z_i=1+\delta Z_i=1+\delta_i$. This splits the Lagrangian 
+between its tree level form and counter terms: 
+\begin{align}
+  \mathcal L =& \mathcal L^c_{\rm g} +\mathcal L_{\rm L} + \mathcal L_{\rm int}
+  +\mathcal L_{\rm ct},\nonumber\\
+  \mathcal L^c_{\rm g} =& 
+  \frac{1}{2}F_{0i}F_{0i}+\frac{v^2}{4}F_{ij}
+  \left[-\nabla^2\right]F_{ij},\nonumber\\
+  \mathcal L_{\rm L} =& \psi^\dagger\left[\partial_0
+  +\frac{\slashed d(-i\partial)}{2m}\right]\psi,\nonumber\\
+  \mathcal L_{\rm int} =& 
+  ie \Big[\psi^\dagger
+  A_0\psi
+  -
+  \sqrt{\frac{d}{2(d-1)}}
+  \frac{1}{2m}
+  \left(
+  \psi^\dagger\slashed\Lambda^{ij}A_i\partial_j\psi
+  -
+  \left(\partial_j\psi^\dagger\right)
+  \slashed\Lambda^{ij}A_i\psi
+  \right)
+  \Big]+\frac{e^2}{2m}\psi^\dagger
+  \slashed d(A)\psi\nonumber\\
+  &
+  +\kappa \psi^\dagger
+  \sigma_{ij}
+  \left(\partial_i A_j
+  -\partial_j A_i
+  \right)\psi
+  ,\nonumber\\
+  \mathcal L_{\rm ct}
+  =&
+  \delta_3\frac{1}{2}F_{0i}F_{0i}
+  +\delta_4\frac{v^2}{2}F_{ij}F_{ij}
+  \nonumber\\
+  &
+  +\delta_1\psi^\dagger\left[\partial_0+ieA_0\right]\psi
+  +\delta_2\psi^\dagger\left[
+    \frac{
+      \slashed{d}(-i\partial+e A)
+    }{2m}\right]\psi
+    +
+  \delta_5\frac{\kappa}{2}\psi^\dagger \Gamma^{ab}\psi
+\eta^i_{ab}\epsilon_{ijk}
+\left(\partial_j A_{k}
+-\partial_k A_{j}
+\right)
+\end{align}
+We have all the pieces in hand to evaluate the renormalized perturbation 
+series diagrammatically in the momentum space. We adopt the following
+convention for the fourier transformation of the fields,
+\beq
+A_\mu(x)&=\int\frac{d^{d+1}k}{(2\pi)^{d+1}}A_\mu(k)e^{ik.x},\\
+\psi(x)&=\int\frac{d^{d+1}k}{(2\pi)^{d+1}}\psi(k)e^{ik.x}.\\
+\eeq
+As a consistent choice of notation, momentum entering a feynman diagram
+vertex shall be considered positive, while the momentum leaving a 
+vertex shall be considered negative. Defining a function,
+$
+\slashed d^i(k)=\sqrt{\frac{d}{2(d-1)}}\slashed\Lambda^{ij}k_j,
+$
+we can compactly write down the momentum space
+ferynman rules for the action:
+\begin{fmffile}{feynman-rules}
+    \begin{align}
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmflabel{$\alpha$}{v1}
+                \fmflabel{$\beta$}{v2}
+                \fmf{fermion,label=$k$}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}=& \
+        \langle\psi_\alpha(k)\psi_\beta^\dagger(k)
+        \rangle = G_{\alpha\beta}(k)
+        =\left[\frac{-ik_0+\slashed{d}(k)/(2m)} 
+        {k_0^2+
+        k^4_\perp/(4m^2)}\right]_{\alpha\beta} 
+        \nonumber\\
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+          \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmflabel{$\mu$}{v1}
+                \fmflabel{$\nu$}{v2}
+                \fmf{photon,label=$k\rightarrow$}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        =& \ 
+        \langle A_\mu(-k)A_\nu(k)\rangle=
+        D^{\rm gf}_{\mu\nu}(k)
+        =\left(
+        \delta_{\mu0}\delta_{\nu0}
+        \frac{v^2 k_\perp^2}{k_0^2+v^2 k_\perp^4}
+        +
+        \delta_{\mu i}\delta_{\nu j}
+        \frac{\delta_{ij}}{k_0^2+v^2 k_\perp^4}
+        \right),
+        \nonumber\\
+        \begin{gathered}
+          \fmfframe(8,8)(4,0){
+            \begin{fmfgraph*}(20,20)
+                \fmfleft{i1,i2}
+                \fmfright{o1}
+                \fmf{fermion,label=$k+q$}{i1,v1}  
+                \fmf{fermion,label=$k$}{v1,i2}
+                \fmf{photon,label=$q \rightarrow $}{o1,v1}  
+                \fmflabel{$\alpha$}{i1}
+                \fmflabel{$\beta$}{i2}
+                \fmflabel{$\mu$}{o1}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        =& \ C^{\mu}_{\alpha\beta}
+        (k+q,-q,-k)
+        = -e\Big[i\delta_{\mu 0}+
+        \frac{\left(\slashed d^i(k+q)-\slashed d^i(-k)\right)}{2m}
+        \delta_{\mu i}
+        \Big]_{\alpha\beta}\nonumber\\
+        &
+        -\kappa
+        \left[\Gamma^{ab}\right]_{\alpha\beta}
+        \eta^i_{ab}\epsilon_{ijk}
+        \left(-i q_j\right)\delta_{\mu k},\nonumber\\
+        \begin{gathered}
+          \fmfframe(8,8)(4,0){
+            \begin{fmfgraph*}(20,20)
+                \fmfleft{i1,i2}
+                \fmfright{o1,o2}
+                \fmf{fermion,label=$k_1$}{i1,v1}  
+                \fmf{fermion,label=$k_1+k_2-k_3$}{v1,i2}  
+                \fmf{photon,label=$\nwarrow k_2$,label.side=right,label.dist=-2}{o1,v1}  
+                \fmf{photon,label=$k_3\nearrow$,label.side=left,label.dist=-2}{v1,o2}  
+                \fmflabel{$\alpha$}{i1}
+                \fmflabel{$\beta$}{i2}
+                \fmflabel{$\mu$}{o1}
+                \fmflabel{$\nu$}{o2}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        =& \ V^{\mu\nu}_{\alpha\beta}(k_1,k_2,-k_3,-k_1-k_2+k_3) 
+        =-\frac{e^2}{m}\sqrt{\frac{d}{2(d-1)}} 
+        \delta_{\mu i}\delta_{\nu j}
+        \left[\slashed\Lambda^{ij}\right]_{\alpha\beta},
+    \end{align}
+\end{fmffile}
+
+\noindent
+where $\{u^\mu\}$ are the Euclidean unit vectors and the factor of 2 in the quartic vertex 
+comes from the symmetry permutation of the 
+photon fields. The Feynman diagram of the counter term vertices are as follows:
+\begin{fmffile}{counter_term}
+    \begin{align}
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmflabel{$\alpha$}{i}
+                \fmflabel{$\beta$}{o}
+                \fmf{fermion,label=$k$}{i,v}  
+                \fmf{fermion,label=$k$}{v,o} 
+                \fmfv{decor.shape=circle,decor.filled=empty}{v}
+            \end{fmfgraph*}
+          }
+        \end{gathered}=& \
+        \delta_{\Sigma}=
+        -\left[
+          \delta_1\left(i k_0\right)
+        +
+        \delta_2\left(
+        \frac{\slashed d(k)}{2m}
+        \right)
+        \right]_{\alpha\beta},
+        \nonumber\\
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmflabel{$\mu$}{i}
+                \fmflabel{$\nu$}{o}
+                \fmf{photon,label=$k\rightarrow$}{i,v}  
+                \fmf{photon,label=$k\rightarrow$}{v,o} 
+                \fmfv{decor.shape=square,decor.filled=empty}{v}
+            \end{fmfgraph*}
+          }
+        \end{gathered}=& \
+        \delta_{\Pi} =
+        -\frac{\delta_3}{2}
+        \left\{k^2\delta_{\mu\nu} -k_\mu k_\nu-
+        \delta_{\mu i}\delta_{\nu j}
+        \left(
+        k_\perp^2\delta_{ij} -k_i k_j
+        \right)
+        \right\}
+        \nonumber\\
+        & \ -
+        \delta_4  
+        \delta_{\mu i}\delta_{\nu j}
+        \frac{v^2
+        k_\perp^2}{2}\left(\delta_{ij}k_\perp^2-k_ik_j\right)
+        ,\nonumber\\
+        \begin{gathered}
+          \fmfframe(8,8)(4,0){
+            \begin{fmfgraph*}(20,20)
+                \fmfleft{i1,i2}
+                \fmfright{o1}
+                \fmf{fermion,label=$k+q$}{i1,v1}  
+                \fmf{fermion,label=$k$}{v1,i2}
+                \fmf{photon,label=$q \rightarrow$}{o1,v1}  
+                \fmfv{decor.shape=triangle,decor.filled=empty}{v1}
+                \fmflabel{$\alpha$}{i1}
+                \fmflabel{$\beta$}{i2}
+                \fmflabel{$\mu$}{o1}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        =& \ \delta_C = -e \Big[
+          \delta_1\left(
+          i\delta_{\mu 0}\right)+
+        +
+        \delta_2\left(
+        \frac{\left(\slashed d^i(k+q)-\slashed d^i(-k)\right)}{2m}
+        \right)\delta_{\mu i}
+        \Big]_{\alpha\beta}\nonumber\\
+      &        -\delta_5\kappa
+        \left[\Gamma^{ab}\right]_{\alpha\beta}
+        \eta^i_{ab}\epsilon_{ijk}
+        \left(-i q_j\right)\delta_{\mu k}      ,\nonumber\\
+        \begin{gathered}
+          \fmfframe(8,8)(4,0){
+            \begin{fmfgraph*}(20,20)
+                \fmfleft{i1,i2}
+                \fmfright{o1,o2}
+                \fmf{fermion,label=$k_1$}{i1,v1}  
+                \fmf{fermion,label=$k_1+k_2-k_3$,label.side=left,label.dist=-2}{v1,i2}  
+                \fmf{photon,label=$\nwarrow k_2$,label.side=right,label.dist=-2}{o1,v1}  
+                \fmf{photon,label=$k_3\nearrow$,label.side=left,label.dist=-2}{v1,o2}  
+                \fmfv{decor.shape=diamond,decor.filled=empty}{v1}
+                \fmflabel{$\alpha$}{i1}
+                \fmflabel{$\beta$}{i2}
+                \fmflabel{$\mu$}{o1}
+                \fmflabel{$\nu$}{o2}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        =& \ 
+        \delta_V=
+        -\delta_2\frac{e^2}{m}
+        \sqrt{\frac{d}{2(d-1)}}
+        \delta_{\mu i}\delta_{\nu j}
+        \left[
+          \slashed\Lambda^{ij}
+        \right]_{\alpha\beta}
+    \end{align}
+\end{fmffile}
+
+\noindent
+It is clear that the counter terms are determined from the self-energy correction
+to the inverse propagator alone. The full 
+renormalized perturbation series can now be setup in terms of these diagrams. 
+Following standard technique we sum up all one-particle irreducible 
+(1PI) diagrams \cite{peskin95} and find,
+\begin{fmffile}{pert_theory}
+    \begin{align}
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{dbl_plain_arrow}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}=& \
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{fermion}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        +
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(40,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{fermion}{i,v1}  
+                \fmf{dbl_plain_arrow}{v2,o}
+                \fmf{plain,left,tension=0.2}{v1,v2,v1}
+                \fmf{phantom,label.dist=0,label=$\Sigma^{\rm 1PI}_\psi$}{v1,v2}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        \nonumber\\
+        \nonumber\\
+        \nonumber\\
+        \Sigma_\psi^{1PI}
+        =& \
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{fermion}{v1,v2}  
+                \fmf{photon,left,tension=0.2}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        +
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{phantom}{i,v,o}  
+                \fmf{photon,right,tension=0.5}{v,v}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}+
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{phantom}{i,v}  
+                \fmf{phantom}{v,o} 
+                \fmfv{decor.shape=circle,decor.filled=empty}{v}
+            \end{fmfgraph*}
+          }
+        \end{gathered}+\dots
+        \nonumber\\
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{dbl_wiggly}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}=& \
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{photon}{v1,v2}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        +
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(40,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{photon}{i,v1}  
+                \fmf{dbl_wiggly}{v2,o}
+                \fmf{plain,left,tension=0.2}{v1,v2,v1}
+                \fmf{phantom,label.dist=0,label=$\Sigma^{\rm 1PI}_A$}{v1,v2}
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        \nonumber\\
+        \nonumber\\
+        \nonumber\\
+        \Sigma_A^{1PI}
+        =& \
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{v1}
+                \fmfright{v2}
+                \fmf{fermion,left,tension=0.2}{v1,v2,v1}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        +
+        \begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{phantom}{i,v,o}  
+                \fmf{fermion,right,tension=0.5}{v,v}  
+            \end{fmfgraph*}
+          }
+        \end{gathered}
+        +\begin{gathered}
+          \fmfframe(4,4)(4,0){
+            \begin{fmfgraph*}(20,10)
+                \fmfleft{i}
+                \fmfright{o}
+                \fmf{phantom}{i,v}  
+                \fmf{phantom}{v,o} 
+                \fmfv{decor.shape=square,decor.filled=empty}{v}
+            \end{fmfgraph*}
+          }
+        \end{gathered}+\dots
+        \nonumber\\
+    \end{align}
+\end{fmffile}
+
+\noindent
+In terms of the vertex functions and the propagators the 
+diagrams are evaluated to
+\beq
+\Sigma^{\rm 1L}_\psi(k)
+=& 
+\int_q C^{\mu}(k+q,-q,-k)G(k+q)
+C^{\nu}(k,q,-k-q)D^{\rm gf}_{\mu\nu}(q)\nonumber\\
+&+
+\int_q V^{\mu\nu}(k,q,-q,-k)D^{\rm gf}_{\mu\nu}(q)
++\delta_{\Sigma},\nonumber\\
+\Sigma_A^{\mu\nu,\rm 1L}(k) 
+=&-
+\int_q \tr\left[
+  C^\mu(q+k,-k,q)G(q+k)
+  C^\nu(q,k,-q-k)G(q)
+  \right]\nonumber\\
+&-
+\int_q \tr\left[V^{\mu\nu}(q,k,-k,-q)G(q)\right]
++\delta_\Pi,
+\eeq
+where $\int_q=\int\frac{dq_0}{2\pi}\frac{d^dq_\perp}{(2\pi)^d}$ is the shorthand 
+for the $d+1$ dimensional integral over internal frequency-momenta $q$.
+To determine the renormalization parameters we shall demand the finiteness of the 
+tree level action with respect to an artificial renormalization scale 
+$\mu$. Which implies that the 
+divergent pieces in the self energy expressions should
+identically cancel. This criteria shall determine the divergent counter terms 
+of the action.
+
+It can be shown that the only external momentum dependence of 
+self-energies are through the set of functions $(k_0,d_a(k),d_a^i(k))$. Therefore, we
+may perform a Taylor expansion to obtain the leading order external momentum
+dependence of the self-energies in terms of this function. We can introduce some
+additional parameters $t,u,v$ and obtain,
+\beq
+\Sigma(tk_0,u d_a(k))
+\eeq
+
+\subsection{Useful formulae for the one-loop integrals}
+
+We shall compute the frequency part of the loop integrals exactly as they involve no
+divergences. For the remaining $d$ dimensional momentum integral we shall first
+resolve the complicated denominators of the frequency-integrated 
+loop expressions using 
+the Feynman's parametric integral formulae\cite{kleinert01}:
+\beq
+\frac{1}{A^aB^b}&=\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)}
+\int^1_0dx\frac{x^{a-1}(1-x)^{b-1}}{[Ax+B(1-x)]^{a+b}},\nonumber\\
+\frac{1}{A_1^{a_1}\dots A_n^{a_n}}
+&=\frac{\Gamma(a_1+\dots+a_n)}{\Gamma(a_1)\dots\Gamma(a_n)}
+\int^1_0 dx_1\dots\int^1_0dx_n\frac{\delta(1-(x_1+\dots+x_n))x_1^{a_1-1}\dots x_n^{a_n-1}}
+{(x_1A_1+\dots+x_nA_n)^{a_1+\dots+a_n}}.
+\eeq
+Following the Feynman parameterization, a momentum shift puts the generic loop integral
+in the form,
+$
+\int_{q_\perp} f_1(q_\perp^2)f_2(q_i,k_\mu)
+$,
+which can be further reduced by considering the integral identity,
+\beq
+\int\frac{d^dq}{(2\pi)^d}f(q^2)q_iq_j
+=\frac{\delta_{ij}}{d}
+\int\frac{d^dq}{(2\pi)^d}f(q^2)q^2.
+\eeq
+In fact we shall need similar identities involving multiple products of internal
+momentum with open indices. In such types of integral 
+the only non-zero contribution comes from cases where all the internal momentum
+indices are pairwise contracted. It is straightforward 
+to show this with the help of the Laplace transform of the (well-behaved) 
+function $f(q^2)$. With the transform the integrals of the type,
+\beq
+K_{ijkl}&=\int\frac{d^dq}{(2\pi)^d}f(q^2)q_i q_j q_k q_l,\\
+&=\int^\infty_0dt\int\frac{d^dq}{(2\pi)^d}
+\tilde f(t)e^{-q^2t}q_iq_jq_kq_l,
+\eeq
+can be recast in terms of a generating variable $Y_i$ such that,
+\beq
+K_{ijkl}
+&=
+\left.
+\frac{\partial^4}{\partial Y_i
+\partial Y_j
+\partial Y_k
+\partial Y_l
+}
+\left[
+\int^\infty_0dt\int\frac{d^dq}{(2\pi)^d}
+\tilde f(t)e^{-q^2t+Y_iq_i}
+\right]
+\right|_{Y_i\rightarrow 0}
+,\nonumber\\
+&=
+\left.
+\frac{\partial^4}{
+  \partial Y_i
+  \partial Y_j
+  \partial Y_k
+  \partial Y_l
+}
+\left[
+\int^\infty_0dt\tilde f(t)
+\frac{
+  e^{Y_i^2/(4t)}
+}{(2\pi)^{d/2}(2t)^{d/2}}
+\right]
+\right|_{Y_i\rightarrow 0}
+,\nonumber\\
+&=
+\int^\infty_0dt
+\frac{
+\tilde f(t)
+}{(2\pi)^{d/2}(2t)^{d/2}}
+\left(
+\frac{\delta_{ij}}{2t}
+\frac{\delta_{kl}}{2t}
++
+\frac{\delta_{ik}}{2t}
+\frac{\delta_{jl}}{2t}
++
+\frac{\delta_{il}}{2t}
+\frac{\delta_{jk}}{2t}
+\right).
+\eeq
+On the other hand we find that,
+\beq
+\int\frac{d^dq}{(2\pi)^d}f(q^2)q^4
+&=\int^\infty_0 dt\int\frac{d^dq}{(2\pi)^d}
+\tilde f(t)e^{-q^2t}q^4,\nonumber\\
+&=\int^\infty_0 dt
+\tilde f(t)
+\frac{\partial^2}{\partial^2 t}
+\int\frac{d^dq}{(2\pi)^d}e^{-q^2t},\nonumber\\
+&=\int^\infty_0 dt
+\tilde f(t)
+\frac{\partial^2}{\partial^2 t}
+\left(
+\frac{1}{(2\pi)^{d/2}(2t)^{d/2}}\right),\nonumber\\
+&=\int^\infty_0 dt
+\frac{\tilde f(t)}{(2\pi)^{d/2}(2t)^{d/2}}
+\left(\frac{d(d+2)}{4t^2}\right).\nonumber\\
+\eeq
+Combining these two results we find that,
+\beq
+K_{ijkl}&=\int\frac{d^dq}{(2\pi)^d}f(q^2)q_i q_j q_k q_l
+=\frac{1}{d(d+2)}
+\int\frac{d^dq}{(2\pi)^d}f(q^2)q^4
+\left(
+\delta_{ij}
+\delta_{kl}
++
+\delta_{ik}
+\delta_{jl}
++
+\delta_{il}
+\delta_{jk}
+\right),
+\eeq
+and similarly,
+\beq
+K_{ijklmn}&=\int\frac{d^dq}{(2\pi)^d}f(q^2)q_i q_j q_k q_l q_m q_n
+=\frac{1}{d(d+2)(d+4)}
+\int\frac{d^dq}{(2\pi)^d}f(q^2)q^4
+\left(
+\delta_{ij}
+\delta_{kl}\delta_{mn}
++
+\dots
+\right).
+\eeq
+
+\subsection{The fermion self-energy}
+
+We start with the one-loop renormalized fermion self-energy 
+$\Sigma^{\rm 1L}_\psi(k)$. The full expression is,
+\beq
+\Sigma^{\rm 1L}_\psi(k)
+=&\int_q
+\Bigg[
+e\left[i\delta_{\mu 0}+
+        \frac{
+          \slashed d^i(q+2k)
+        }{2m}
+        \delta_{\mu i}
+        \right]\nonumber\\
+& \ \times
+        \left[\frac{-i(k_0+q_0)
+        +\slashed d(k+q)/(2m)
+        } 
+        {(k_0+q_0)^2+
+        d(k+q)^2/(4m^2)}\right]\nonumber\\
+& \ \times
+e\left[i\delta_{\nu 0}+
+        \frac{
+          \slashed d^i(q+2k)
+        }{2m}
+        \delta_{\nu i}
+        \right]\nonumber\\
+& \ \times
+    \left(
+        \delta_{\mu0}\delta_{\nu0}
+        \frac{v^2 q_\perp^2}{q_0^2+v^2 q_\perp^4}
+        +
+        \delta_{\mu i}\delta_{\nu j}
+        \frac{\delta_{ij}}{q_0^2+v^2 q_\perp^4}
+        \right)
+\Bigg]
+  -\left[
+    \delta_1\left(ik_0\right)
+    +\delta_2\left(
+    \frac{\slashed d(k)}{2m}\right)
+    \right].
+\eeq
+The contribution from the quartic vertex identically vanishes in this case. 
+We shall consider the case for non-zero external frequency and momenta separately.
+For the $k=(k_0,0)$ we obtain,
+\beq
+\tr\left[\Sigma^{\rm 1L}_\psi(k_0,0)\right]
+=&\int_q
+\tr\Bigg[
+e\left[i\delta_{\mu 0}+
+        \frac{
+          \slashed d^i(q)
+        }{2m}
+        \delta_{\mu i}
+        \right]\left[\frac{-i (q_0+k_0)
+        +\slashed d(q)/(2m)
+        } 
+        {(q_0+k_0)^2+
+        d(q)^2/(4m^2)}\right]\nonumber\\
+& \ \times
+e\left[i\delta_{\nu 0}+
+        \frac{
+          \slashed d^i(q)
+        }{2m}
+        \delta_{\nu i}
+        \right]\left(
+        \delta_{\mu0}\delta_{\nu0}
+        \frac{v^2 q_\perp^2}{q_0^2+v^2 q_\perp^4}
+        +
+        \delta_{\mu i}\delta_{\nu j}
+        \frac{\delta_{ij}}{q_0^2+v^2 q_\perp^4}
+        \right)
+\Bigg]
+  -4\delta_1\left(ik_0\right),\nonumber\\
+  =&-\frac{2i e^2(d-8m^2v^2+2)}{4m^2}
+  \int_q\frac{(q_0+k_0)q^2}{(q_0^2+v^2q^4)((q_0+k_0)^2+\frac{q^4}{4m^2})}
+  -4\delta_1(ik_0)
+\eeq
+
+\subsection{The photon self-energy}
+
+Now we turn to the counter terms in the photon sector. It shall be convenient to introduce 
+the transverse and longitudinal projectors associated with the photon propagator, defined
+respectively as,
+\beq
+P^T_{\mu\nu}(k)=\delta_{\mu\nu}-\frac{k_\mu k_\nu}{k^2},
+\ 
+P^L_{\mu\nu}(k)=\frac{k_\mu k_\nu}{k^2}.
+\eeq
+We shall also define similar but separate 
+projectors that act on the spatial components alone,
+\beq
+p^T_{ij}(k)=\delta_{ij}-\frac{k_i k_j}{k_\perp^2},
+\ 
+p^L_{ij}(k)=\frac{k_i k_j}{k_\perp^2}.
+\eeq
+With the aide of these projectors the
+one-loop renormalized photon self-energy can be written down as,
+\begin{align}
+\Sigma_A^{\mu\nu,\rm 1L}(k_0,\vec k_\perp) 
+=&-
+\int_q
+\tr\Bigg[
+  e\left[
+    i\delta_{\mu0}
+    +\frac{
+      \delta_{\mu i}\slashed d^i(k+2q)
+    }{2m}
+    \right] \nonumber\\
+  & \times
+  \left[
+    \frac{-i(q_0+k_0)+\frac{\slashed d(q+k)}{2m}}
+    {\left(q_0+k_0\right)^2+
+    \frac{|\vec q_\perp+\vec k_\perp|^4}{4m^2}
+    }
+    \right] \nonumber\\
+  & \times
+  e\left[
+    i\delta_{\nu0}
+    +\frac{
+      \delta_{\nu i}\slashed d^i(k+2q)
+    }{2m}
+    \right]\left[
+    \frac{-i q_0+\frac{\slashed d(q)}{2m}}
+    {q_0^2+
+    \frac{q_\perp^4}{4m^2}
+    }
+    \right] \Bigg]\nonumber\\
+&-\delta_3
+  \left(k^2P^T_{\mu\nu}(k)-k_\perp^2\delta_{\mu i}\delta_{\nu j}p^T_{ij}(k)\right)
+  \nonumber\\
+& \ -
+\delta_4  
+\delta_{\mu i}\delta_{\nu j}
+  v^2
+  k_\perp^4p^T_{ij}(k).
+\end{align}
+The contribution from the quartic vertex once again drops out identically due to the properties
+of the $\Lambda_a$ matrices. The computation also greatly simplifies if we evaluate the 
+self-energy at zero external frequency, $k_0 = 0$.
+
+To extract the counter term $\delta_4$ we separate the spatial components of the photon self-energy
+and evaluate it at the fixed external frequency $k_0 = 0$. We obtain,
+\begin{align}
+  &\Sigma_A^{ij,\rm 1L}(0,\vec k)\nonumber\\ 
+  =&-
+\int_q
+\tr\Bigg[
+  e\left[
+    \frac{
+      \slashed d^i(k+2q)
+    }{2m}
+    \right]\left[
+    \frac{-iq_0+\frac{\slashed d(q+k)}{2m}}
+    {q_0^2+
+    \frac{|\vec q+\vec k|^4}{4m^2}
+    }
+    \right] \nonumber\\
+  & \times
+  e\left[
+    \frac{
+      \slashed d^j(k+2q)
+    }{2m}
+    \right]\left[
+    \frac{-i q_0+\frac{\slashed d(q)}{2m}}
+    {q_0^2+
+    \frac{q_\perp^4}{4m^2}
+    }
+    \right] \Bigg]-\delta_4 v^2 k_\perp^4p^T_{ij}(k),\\
+=&-\frac{e^2}{4m^2}
+\int_q
+  \frac{M_1^{ij}(\vec k,q_0,\vec q)}{
+    \left(q_0^2+\frac{|\vec q+\vec k|^4}{4m^2}\right)
+    \left(q_0^2+\frac{q_\perp^4}{4m^2}\right)
+  }
+  -\delta_4 v^2 k_\perp^4p^T_{ij}(k),\\
+\end{align}
+where,
+\beq
+M_1^{ij}(\vec k,q_0,\vec q)=\tr\left[
+  \slashed d^i(k+2q)
+  \left(-iq_0+\frac{\slashed d(q+k)}{2m}\right)
+  \slashed d^j(k+2q)
+  \left(-iq_0+\frac{\slashed d(q)}{2m}\right)
+  \right],
+\eeq
+is the trace product in the numerator. We compute the frequency integral exactly using
+residue theorem and obtain,
+\beq
+&\Sigma_A^{ij,\rm 1L}(0,\vec k)\nonumber\\ 
+=&-\frac{e^2}{4m^2}
+\int_{\vec q}
+  \left(
+  -\frac{1}{2}\frac{M_1^{ij}(\vec k,i |\vec k+\vec q|^2/(2m),\vec q)}
+  {\frac{|\vec k+\vec q|^2}{2m}
+  \left(
+  \frac{|\vec k+\vec q|^2}{2m}
+  -
+  \frac{q_\perp^2}{2m}
+  \right)
+    \left(
+  \frac{|\vec k+\vec q|^2}{2m}
+  +
+  \frac{q_\perp^2}{2m}
+  \right)
+  }
+  +\frac{1}{2}\frac{M_1^{ij}(\vec k,i q_\perp^2/(2m),\vec q)}
+  {\frac{q_\perp^2}{2m}
+  \left(
+  \frac{|\vec k+\vec q|^2}{2m}
+  -
+  \frac{q_\perp^2}{2m}
+  \right)
+    \left(
+  \frac{|\vec k+\vec q|^2}{2m}
+  +
+  \frac{q_\perp^2}{2m}
+  \right)
+  }
+  \right)\nonumber\\
+  &-\delta_4 v^2 k_\perp^4p^T_{ij}(k),\nonumber\\
+=&\frac{d e^2}{4(d-1)^2m}
+\int_{\vec q}
+\frac{M_2^{ij}(\vec k,\vec q)}{q_\perp^2
+\left(q_\perp^2+2\vec q\cdot\vec k +k_\perp^2\right)
+\left(q_\perp^2+\frac{2\vec q\cdot\vec k +k_\perp^2}{2}\right)
+}\nonumber\\
+=&\frac{2d e^2}{4(d-1)^2m}
+\int_{\vec q}
+\int^1_0 dx_1
+\int^1_0 dx_2
+\int^1_0 dx_3
+\frac{\delta\left(1-\left(x_1+x_2+x_3\right)\right)
+M_2^{ij}(\vec k,\vec q)}{\left(x_1 q_\perp^2+
+x_2\left(q_\perp^2+2\vec q\cdot\vec k +k_\perp^2\right)
++x_3\left(q_\perp^2+\frac{2\vec q\cdot\vec k +k_\perp^2}{2}\right)\right)^3
+},\nonumber\\
+=&\frac{2d e^2}{4(d-1)^2m}
+\int_{\vec q}
+\int^1_0 dx_1
+\int^1_0 dx_2
+\int^1_0 dx_3 \nonumber\\
+&\times \frac{\delta\left(1-\left(x_1+x_2+x_3\right)\right)
+M_2^{ij}(\vec k,\vec q)}
+{\left(q_\perp^2
++2\vec q\cdot\left(x_2\vec k+(x_3/2)\vec k\right)
++\left|x_2\vec k+(x_3/2)\vec k\right|^2
++\left(x_2+x_3/2\right)\left(1-
+\left(x_2+x_3/2\right)
+\right)k_\perp^2
+\right)^3
+},\nonumber\\
+=&\frac{2d e^2}{4(d-1)^2m}
+\int_{\vec q}
+\int^1_0 dx_1
+\int^1_0 dx_2
+\int^1_0 dx_3 \frac{\delta\left(1-\left(x_1+x_2+x_3\right)\right)
+M_2^{ij}(\vec k,\vec q-(x_2+x_3/2)\vec k)}
+{\left(q_\perp^2+\left(x_2+x_3/2\right)\left(1-
+\left(x_2+x_3/2\right)
+\right)k_\perp^2
+\right)^3
+},\nonumber\\
+\eeq
+where in the last two lines we have used the delta function condition $x_1+x_2+x_3=1$ 
+and shifted the internal momenta to simplify the integral.
+
+
+\bibliography{luttinger_act}
+\end{document}

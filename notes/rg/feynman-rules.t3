@@ -1,0 +1,7 @@
+% feynman-rules.t3 -- generated from feynman-rules.mp
+\fmfL(6.80836,3.91505,lt){$k+q$}%
+\fmfL(14.00003,12.10876,b){$q \rightarrow $}%
+\fmfL(3.19183,13.91505,rt){$k$}%
+\fmfL(0.68279,-1.64667,rt){$\alpha $}%
+\fmfL(0.68279,21.64667,rb){$\beta $}%
+\fmfL(22.10876,10,l){$\mu $}%

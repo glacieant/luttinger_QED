@@ -1,0 +1,207 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{15}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Moon}\ \emph {et~al.}(2013)\citenamefont {Moon},
+  \citenamefont {Xu}, \citenamefont {Kim},\ and\ \citenamefont
+  {Balents}}]{moon13}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.-G.}\ \bibnamefont
+  {Moon}}, \bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Xu}}, \bibinfo
+  {author} {\bibfnamefont {Y.~B.}\ \bibnamefont {Kim}},\ and\ \bibinfo {author}
+  {\bibfnamefont {L.}~\bibnamefont {Balents}},\ }\bibfield  {title} {\bibinfo
+  {title} {Non-fermi-liquid and topological states with strong spin-orbit
+  coupling},\ }\href {https://doi.org/10.1103/PhysRevLett.111.206401}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {111}},\ \bibinfo {pages} {206401} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Murakami}\ \emph {et~al.}(2004)\citenamefont
+  {Murakami}, \citenamefont {Nagosa},\ and\ \citenamefont
+  {Zhang}}]{murakami04}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.}~\bibnamefont
+  {Murakami}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Nagosa}},\
+  and\ \bibinfo {author} {\bibfnamefont {S.-C.}\ \bibnamefont {Zhang}},\
+  }\bibfield  {title} {\bibinfo {title} {$\text{SU}(2)$ non-abelian holonomy
+  and dissipationless spin current in semiconductors},\ }\href
+  {https://doi.org/10.1103/PhysRevB.69.235206} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
+  {pages} {235206} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Janssen}\ and\ \citenamefont
+  {Herbut}(2015)}]{janssen15}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Janssen}}\ and\ \bibinfo {author} {\bibfnamefont {I.~F.}\ \bibnamefont
+  {Herbut}},\ }\bibfield  {title} {\bibinfo {title} {Nematic quantum
+  criticality in three-dimensional fermi system with quadratic band touching},\
+  }\href {https://doi.org/10.1103/PhysRevB.92.045117} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {92}},\
+  \bibinfo {pages} {045117} (\bibinfo {year} {2015})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boettcher}\ and\ \citenamefont
+  {Herbut}(2016)}]{boettcher16}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Boettcher}}\ and\ \bibinfo {author} {\bibfnamefont {I.~F.}\ \bibnamefont
+  {Herbut}},\ }\bibfield  {title} {\bibinfo {title} {Superconducting quantum
+  criticality in three-dimensional luttinger semimetals},\ }\href
+  {https://doi.org/10.1103/PhysRevB.93.205138} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {93}},\ \bibinfo
+  {pages} {205138} (\bibinfo {year} {2016})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Zinn-Justin}(2021)}]{zinn21}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Zinn-Justin}},\ }\href {https://books.google.ca/books?id=ioskEAAAQBAJ}
+  {\emph {\bibinfo {title} {Quantum Field Theory and Critical Phenomena: Fifth
+  Edition}}},\ International Series of Monographs on Physics Series\ (\bibinfo
+  {publisher} {Oxford University Press},\ \bibinfo {year} {2021})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Srednicki}(2007)}]{srednicki07}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Srednicki}},\ }\href {https://doi.org/10.1017/CBO9780511813917} {\emph
+  {\bibinfo {title} {Quantum Field Theory}}}\ (\bibinfo  {publisher} {Cambridge
+  University Press},\ \bibinfo {year} {2007})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Moessner}\ and\ \citenamefont
+  {Sondhi}(2003)}]{moessner03}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Moessner}}\ and\ \bibinfo {author} {\bibfnamefont {S.~L.}\ \bibnamefont
+  {Sondhi}},\ }\bibfield  {title} {\bibinfo {title} {Three-dimensional
+  resonating-valence-bond liquids and their excitations},\ }\href
+  {https://doi.org/10.1103/PhysRevB.68.184512} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume} {68}},\ \bibinfo
+  {pages} {184512} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Hermele}\ \emph {et~al.}(2004)\citenamefont
+  {Hermele}, \citenamefont {Fisher},\ and\ \citenamefont
+  {Balents}}]{hermele04}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Hermele}}, \bibinfo {author} {\bibfnamefont {M.~P.~A.}\ \bibnamefont
+  {Fisher}},\ and\ \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Balents}},\ }\bibfield  {title} {\bibinfo {title} {Pyrochlore photons: The
+  $u(1)$ spin liquid in a $s=\frac{1}{2}$ three-dimensional frustrated
+  magnet},\ }\href {https://doi.org/10.1103/PhysRevB.69.064404} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo {volume}
+  {69}},\ \bibinfo {pages} {064404} (\bibinfo {year} {2004})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Das}\ and\ \citenamefont {Murthy}(2010)}]{das10}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {S.~R.}\ \bibnamefont
+  {Das}}\ and\ \bibinfo {author} {\bibfnamefont {G.}~\bibnamefont {Murthy}},\
+  }\bibfield  {title} {\bibinfo {title} {Compact $z=2$ electrodynamics in $2+1$
+  dimensions: Confinement with gapless modes},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.104.181601} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {104}},\
+  \bibinfo {pages} {181601} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Alexandre}\ and\ \citenamefont
+  {Brister}(2013)}]{alexandre13}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Alexandre}}\ and\ \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Brister}},\ }\bibfield  {title} {\bibinfo {title} {Fermion effective
+  dispersion relation for $z\mathbf{=}2$ lifshitz qed},\ }\href
+  {https://doi.org/10.1103/PhysRevD.88.065020} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {88}},\ \bibinfo
+  {pages} {065020} (\bibinfo {year} {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Anselmi}\ and\ \citenamefont
+  {Taiuti}(2010)}]{anselmi10}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Anselmi}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Taiuti}},\ }\bibfield  {title} {\bibinfo {title} {Renormalization of
+  high-energy lorentz-violating qed},\ }\href
+  {https://doi.org/10.1103/PhysRevD.81.085042} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {81}},\ \bibinfo
+  {pages} {085042} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Farias}\ \emph {et~al.}(2012)\citenamefont {Farias},
+  \citenamefont {Gomes}, \citenamefont {Nascimento}, \citenamefont {Petrov},\
+  and\ \citenamefont {da~Silva}}]{farias12}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.~F.}\ \bibnamefont
+  {Farias}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Gomes}},
+  \bibinfo {author} {\bibfnamefont {J.~R.}\ \bibnamefont {Nascimento}},
+  \bibinfo {author} {\bibfnamefont {A.~Y.}\ \bibnamefont {Petrov}},\ and\
+  \bibinfo {author} {\bibfnamefont {A.~J.}\ \bibnamefont {da~Silva}},\
+  }\bibfield  {title} {\bibinfo {title} {Effective potential for
+  horava-lifshitz-like theories},\ }\href
+  {https://doi.org/10.1103/PhysRevD.85.127701} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo {volume} {85}},\ \bibinfo
+  {pages} {127701} (\bibinfo {year} {2012})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Peskin}\ and\ \citenamefont
+  {Schroeder}(1995)}]{peskin95}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Peskin}}\ and\ \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Schroeder}},\ }\href {https://books.google.ca/books?id=EVeNNcslvX0C} {\emph
+  {\bibinfo {title} {An Introduction To Quantum Field Theory}}},\ Frontiers in
+  Physics\ (\bibinfo  {publisher} {Avalon Publishing},\ \bibinfo {year}
+  {1995})\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boettcher}\ and\ \citenamefont
+  {Herbut}(2017)}]{boettcher17}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Boettcher}}\ and\ \bibinfo {author} {\bibfnamefont {I.~F.}\ \bibnamefont
+  {Herbut}},\ }\bibfield  {title} {\bibinfo {title} {Anisotropy induces
+  non-fermi-liquid behavior and nematic magnetic order in three-dimensional
+  luttinger semimetals},\ }\href {https://doi.org/10.1103/PhysRevB.95.075149}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. B}\ }\textbf {\bibinfo
+  {volume} {95}},\ \bibinfo {pages} {075149} (\bibinfo {year}
+  {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Kleinert}\ and\ \citenamefont
+  {Schulte-Frohlinde}(2001)}]{kleinert01}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Kleinert}}\ and\ \bibinfo {author} {\bibfnamefont {V.}~\bibnamefont
+  {Schulte-Frohlinde}},\ }\href {https://books.google.ca/books?id=rBfWk4vVi-cC}
+  {\emph {\bibinfo {title} {Critical Properties of [Greek Letter
+  Phi]4-theories}}}\ (\bibinfo  {publisher} {World Scientific},\ \bibinfo
+  {year} {2001})\BibitemShut {NoStop}%
+\end{thebibliography}%

@@ -1,0 +1,9 @@
+% counter_term.t4 -- generated from counter_term.mp
+\fmfL(3.79785,5.62292,rb){$k_1$}%
+\fmfL(14.00452,3.86482,lb){$\nwarrow k_2$}%
+\fmfL(5.99548,16.1352,rt){$k_1+k_2-k_3$}%
+\fmfL(15.10641,15.25368,rb){$k_3\nearrow $}%
+\fmfL(0.68279,-1.64667,rt){$\alpha $}%
+\fmfL(0.68279,21.64667,rb){$\beta $}%
+\fmfL(19.31721,-1.64667,lt){$\mu $}%
+\fmfL(19.31721,21.64667,lb){$\nu $}%
