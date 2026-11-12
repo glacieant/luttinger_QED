@@ -1,0 +1,16 @@
+.DS_Store
+*.tex
+*.bib
+*.bbl
+*.blg
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.mps
+*.fdb_latexmk
+*counter_term*
+*feynman_rules*
+*pert_theory*
